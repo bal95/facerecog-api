@@ -8,10 +8,10 @@ const image=require('./controllers/image')
 const knex=require('knex')({
     client: 'pg',
     connection:{
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'uranium238',
-        database: 'smart-brain',
+        host: process.env.DATABASE_URL,
+        ssl:{
+            rejectUnauthorized:false
+        }
     }
 })
 
