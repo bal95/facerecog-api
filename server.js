@@ -31,4 +31,6 @@ app.post('/signin',(req,res)=>signin.handleSignin(req,res,knex,bcrypt))
 app.post('/register',(req,res)=>register.handleRegister(req,res,knex,bcrypt))
 app.get('/profile/:id',(req,res)=>profile.handleProfile(req,res,knex))
 app.put('/image',(req,res)=>image.handleImage(req,res,knex))
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000,()=>{
+    console.log(`listening on port ${process.env.PORT}`)
+})
